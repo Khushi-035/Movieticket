@@ -112,76 +112,64 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
 
-                    Align(
+                  
+                      Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Forgot Password",
-                          style: const TextStyle(
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w600
-                          ),
-                        ),
-                        ),
-                    ),
-                      // Align(
-                      // alignment: Alignment.centerRight,
-                      // child: TextButton(
-                      //   onPressed: () {
-                      //     Get.defaultDialog(
-                      //       title: "Forgort Password?",
-                      //       content: TextFormField(
-                      //         style: const TextStyle(color: Colors.black),
-                      //         controller: forgotEmailController,
-                      //         decoration: InputDecoration(
-                      //           border: OutlineInputBorder(
-                      //             borderRadius: BorderRadius.circular(5),
-                      //             borderSide: BorderSide.none,
-                      //           ),
-                      //           hintText: "Email address",
-                      //           hintStyle: const TextStyle(color: Colors.black45),
-                      //           fillColor: MyTheme.greyColor,
-                      //           filled: true,
-                      //         ),
-                      //       ),
-            //                 radius: 10,
-            //                 onWillPop: () {
-            //                   forgotEmailController.text = "";
+                        onPressed: () {
+                          Get.defaultDialog(
+                            title: "Forgot Password?",
+                            content: TextFormField(
+                              style: const TextStyle(color: Colors.black),
+                              controller: forgotEmailController,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                  borderSide: BorderSide.none,
+                                ),
+                                hintText: "Email address",
+                                hintStyle: const TextStyle(color: Colors.black45),
+                                fillColor: MyTheme.greyColor,
+                                filled: true,
+                              ),
+                            ),
+                            radius: 10,
+                            onWillPop: () {
+                              forgotEmailController.text = "";
 
-            //                   return Future.value(true);
-            //                 },
-            //                 contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            //                 confirm: ElevatedButton(
-            //                   onPressed: () {
-            //                     AuthController.instance.forgotPassword(forgotEmailController.text.trim());
-            //                     forgotEmailController.text = "";
-            //                     Get.back();
-            //                   },
-            //                   style: ElevatedButton.styleFrom(
-            //                     primary: MyTheme.splash,
-            //                     shape: RoundedRectangleBorder(
-            //                       borderRadius: BorderRadius.circular(5),
-            //                     ),
-            //                   ),
-            //                   child: const Center(
-            //                     child: Padding(
-            //                       padding: EdgeInsets.all(12),
-            //                       child: Text(
-            //                         "Send Reset Mail",
-            //                         style: TextStyle(fontSize: 16),
-            //                       ),
-            //                     ),
-            //                   ),
-            //                 ),
-            //               );
-            //             },
-            //             child: const Text(
-            //               "Forgot Password?",
-            //               style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w600),
-            //             ),
-            //           ),
-            //         ),
+                              return Future.value(true);
+                            },
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            confirm: ElevatedButton(
+                              onPressed: () {
+                                AuthController.instance.forgotPassword(forgotEmailController.text.trim());
+                                forgotEmailController.text = "";
+                                Get.back();
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: MyTheme.splash,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              child: const Center(
+                                child: Padding(
+                                  padding: EdgeInsets.all(12),
+                                  child: Text(
+                                    "Send Reset Mail",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          "Forgot Password?",
+                          style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ),
                     ElevatedButton(
                       onPressed: () {
                         AuthController.instance.login(emailController.text.trim(), passwordController.text.trim());

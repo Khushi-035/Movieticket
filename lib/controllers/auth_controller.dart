@@ -55,8 +55,10 @@ class AuthController extends GetxController {
 
   void login(email, password) async {
   try {
-      
+    isLogging = true;
+    update();
     await auth.signInWithEmailAndPassword(email: email, password: password);
+    getSuccessSnackBar("Successfully logged in as ${_user.value!.email}");
   } on FirebaseAuthException catch (e) {
     //define error
     getErrorSnackbar("Login Failed", e);
