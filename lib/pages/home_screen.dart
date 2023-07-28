@@ -1,15 +1,19 @@
 // import 'dart:async';
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/gestures.dart';
+import 'dart:async';
+
 import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:movie_booking/controllers/auth_controller.dart';
 import 'package:movie_booking/utils/constants.dart';
 import 'package:movie_booking/utils/custom_slider.dart';
 import 'package:movie_booking/utils/dummy_data.dart';
+import 'package:movie_booking/utils/event_items.dart';
 import 'package:movie_booking/utils/menu_item.dart';
 import 'package:movie_booking/utils/movies_item.dart';
 // import 'package:movie_booking/controllers/auth_controller.dart';
@@ -53,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //   // }
 
   static const CameraPosition _kLake =
-      CameraPosition(bearing: 192.8334901395799, target: LatLng(37.43296265331129, -122.08832357078792), tilt: 59.440717697143555, zoom: 19.151926040649414);
+    CameraPosition(bearing: 192.8334901395799, target: LatLng(37.43296265331129, -122.08832357078792), tilt: 59.440717697143555, zoom: 19.151926040649414);
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -181,6 +185,110 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),),
                 ),
                 MoviesItems(),
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0,top: 10, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Nearby Theatres".toUpperCase(),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.black.withOpacity(0.8),
+                      ),),
+                      TextButton(
+                        onPressed: () {},
+                        child : const Text (
+                          "View All",
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold, color: MyTheme.splash,
+                      ),),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: size.height * 0.2,
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: GoogleMap(
+                    mapType: MapType.normal,
+                    initialCameraPosition: _kGooglePlex,
+                    // gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
+                    //   Factory<OneSequenceGestureRecognizer>(
+                    //     () => EagerGestureRecognizer(),
+                      
+                    // },
+                    onMapCreated: (GoogleMapController controller) {
+                      // _controller.complete(controller);
+                    },
+                    zoomControlsEnabled: false,
+
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0, top: 10, right: 20),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        "assets/icons/spotlights.svg",
+                        color: Colors.black.withOpacity(0.8),
+                        height: 18,
+                        width: 18,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Events".toUpperCase(),
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black.withOpacity(0.8)),
+                      ),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "View All",
+                          style: TextStyle(color: MyTheme.splash),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                EventItems(
+                  events: events,
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0, top: 10, right: 20),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        "assets/icons/theater_masks.svg",
+                        color: Colors.black.withOpacity(0.8),
+                        height: 18,
+                        width: 18,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Plays".toUpperCase(),
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black.withOpacity(0.8)),
+                      ),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "View All",
+                          style: TextStyle(color: MyTheme.splash),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                EventItems(
+                  events: plays,
+                ),
               ],
             ),
           ),
