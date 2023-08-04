@@ -8,8 +8,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:movie_booking/controllers/auth_controller.dart';
+import 'package:movie_booking/pages/profile_screen.dart';
 import 'package:movie_booking/utils/constants.dart';
 import 'package:movie_booking/utils/custom_slider.dart';
 import 'package:movie_booking/utils/dummy_data.dart';
@@ -72,18 +74,19 @@ class _HomeScreenState extends State<HomeScreen> {
           child: AppBar(
             leading: Padding(
               padding: const EdgeInsets.only(left: 8, top: 8),
-              //   child: GestureDetector(
-              //     onTap: () {
-              //       // Get.to(() => const ProfileScreen());
-              //     },
-              // child:
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: CachedNetworkImage(
-                  fit: BoxFit.cover,
-                  imageUrl: picUrl,
-                  height: 60,
-                  width: 60,
+              
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(() => const ProfileScreen());
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: CachedNetworkImage(
+                    fit: BoxFit.cover,
+                    imageUrl: picUrl,
+                    height: 60,
+                    width: 60,
+                  ),
                 ),
               ),
             ),
