@@ -24,3 +24,8 @@ class MyApp extends StatelessWidget {
     );
   }
 } 
+
+
+//errors
+//Google Maps
+//Name on Profile

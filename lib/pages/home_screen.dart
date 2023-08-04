@@ -4,6 +4,8 @@
 import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -97,8 +99,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                      // AuthController.instance.user!.displayName ??
-                      "Name"),
+                      // AuthController.instance.user!.displayName ?? 
+                      "Name"
+                      ),
                   DropdownButton(
                     value: city,
                     dropdownColor: MyTheme.statusBar,
@@ -216,11 +219,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: GoogleMap(
                     mapType: MapType.normal,
                     initialCameraPosition: _kGooglePlex,
-                    // gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
-                    //   Factory<OneSequenceGestureRecognizer>(
-                    //     () => EagerGestureRecognizer(),
+                    gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
+                      Factory<OneSequenceGestureRecognizer>(
+                        () => EagerGestureRecognizer(),
+                      )
                       
-                    // },
+                    },
                     onMapCreated: (GoogleMapController controller) {
                       // _controller.complete(controller);
                     },
