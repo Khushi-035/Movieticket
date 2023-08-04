@@ -63,10 +63,7 @@ class AuthController extends GetxController {
     //define error
     getErrorSnackbar("Login Failed", e);
 
-    //keytool -exportcert -keystore C:\Users\sacha\.android\debug.keystore -list -v
-    //keytool -list -v -keystore"sacha\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
-    //keytool -exportcert -alias androiddebugkey -keystore C:\Users\sacha\.android -list -v
-    //SHA1: E0:7C:53:66:BA:85:5B:6F:1E:18:6B:8F:2D:5A:71:C3:87:95:21:8C
+    
 
   }
 }
