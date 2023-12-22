@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class ProfileController extends GetxController { 
   
-  static ProfileController instance = Get.put(ProfileController());  
+  static ProfileController instance = Get.find();  
   RxBool isEdit = false.obs;
 
   toggleEdit() {

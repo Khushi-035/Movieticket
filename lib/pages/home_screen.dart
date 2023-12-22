@@ -20,22 +20,9 @@ import 'package:movie_booking/utils/dummy_data.dart';
 import 'package:movie_booking/utils/event_items.dart';
 import 'package:movie_booking/utils/menu_item.dart';
 import 'package:movie_booking/utils/movies_item.dart';
-// import 'package:movie_booking/controllers/auth_controller.dart';
-// // import 'package:flutter_catalog/controllers/location_controller.dart';
-// // import 'package:flutter_catalog/pages/profile_screen.dart';
-// // import 'package:flutter_catalog/pages/select_location_screen.dart';
-// // import 'package:flutter_catalog/utils/dummy_data.dart';
-import 'package:movie_booking/utils/mytheme.dart';
-// import 'package:get/get.dart';
 
-// import '../controllers/auth_controller.dart';
-// // import '../utils/custom_slider.dart';
-// // import '../utils/dummy_data.dart';
-// // import '../utils/event_items.dart';
-// // import '../utils/menu_item.dart';
-// // import '../utils/movies_item.dart';
-// import '../utils/mytheme.dart';
-// // import '../utils/constants.dart';
+import 'package:movie_booking/utils/mytheme.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -119,6 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         setState(() {
                           city = st!;
                         });
+                        
                       })
                   // GestureDetector(
                   //   onTap: () {

@@ -2,8 +2,7 @@ import 'package:movie_booking/model/seat_layout_model.dart';
 
 import '../model/crew_cast_model.dart';
 import '../model/movie_model.dart';
-// import '../model/offer_model.dart';
-// import '../model/theatre_model.dart';
+
 import '../utils/mytheme.dart';
 
 import '../model/ad_slider_model.dart';

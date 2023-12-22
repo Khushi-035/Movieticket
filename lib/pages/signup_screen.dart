@@ -4,13 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:movie_booking/controllers/auth_controller.dart';
 import 'package:movie_booking/controllers/input_validation.dart';
-// import 'package:flutter_catalog/controllers/auth_controller.dart';
-// import 'package:flutter_catalog/controllers/input_validators.dart';
-// import 'package:movie_booking/pages/login_screen.dart';
 import 'package:movie_booking/utils/mytheme.dart';
 import 'package:movie_booking/utils/social_buttons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:get/get.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
